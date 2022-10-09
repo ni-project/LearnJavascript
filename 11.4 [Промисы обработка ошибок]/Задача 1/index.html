@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        11.4 | Задача 1
+    </title>
+</head>
+<body>
+
+    <script>
+
+        // Что вы думаете? Выполнится ли .catch? Поясните свой ответ.
+
+        new Promise(function(resolve, reject) {
+            setTimeout(() => {
+                throw new Error("Whoops!");
+            }, 1000);
+        }).catch(alert);
+
+        //---------------------------------------------------------------------------
+
+        // Из-за setTimeout задержки, catch не отработает.
+        // Если бы не было setTimeout, то catch отработалбы
+
+    </script>
+
+</body>
+</html>

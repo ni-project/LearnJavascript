@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        8.2 | Задача 1
+    </title>
+</head>
+<body>
+
+    <script>
+
+        //
+
+        function Rabbit() {}
+        Rabbit.prototype = {
+            eats: true
+        };
+
+        let rabbit = new Rabbit();
+
+        alert( rabbit.eats ); // true
+
+        //-------------------------------------------------------------
+
+        function Rabbit() {}
+        Rabbit.prototype = {
+            eats: true
+        };
+
+        let rabbit = new Rabbit();
+
+        Rabbit.prototype = {}; // новая строчка
+
+        alert( rabbit.eats ); // ?
+
+        // 1) покажет true
+
+        //-------------------------------------------------------------
+
+        function Rabbit() {}
+        Rabbit.prototype = {
+            eats: true
+        };
+
+        let rabbit = new Rabbit();
+
+        Rabbit.prototype.eats = false; // новая строчка
+
+        alert( rabbit.eats ); // ?
+
+        // 2) покажет false
+
+        //-------------------------------------------------------------
+
+        function Rabbit() {}
+        Rabbit.prototype = {
+            eats: true
+        };
+
+        let rabbit = new Rabbit();
+
+        delete rabbit.eats;
+
+        alert( rabbit.eats ); // ?
+
+        // 3) true. Потомучто rabbit.eats видит из Rabbit.prototype.eats
+
+        //-------------------------------------------------------------
+
+        function Rabbit() {}
+        Rabbit.prototype = {
+            eats: true
+        };
+
+        let rabbit = new Rabbit();
+
+        delete Rabbit.prototype.eats;
+
+        alert( rabbit.eats ); // ?
+
+        // 4) undefined. из Rabbit удалили prototype.eats
+
+    </script>
+
+</body>
+</html>

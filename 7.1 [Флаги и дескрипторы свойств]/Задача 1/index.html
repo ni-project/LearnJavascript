@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        7.1 | Задача 1
+    </title>
+</head>
+<body>
+
+    <script>
+
+        // Сделаем свойство user.name доступным только для чтения. Для этого изменим флаг writable:
+
+        let user = {
+            name: "John"
+        };
+
+        Object.defineProperty(user, "name", {
+            writable: false
+        });
+
+        user.name = "Pete"; // Ошибка: Невозможно изменить доступное только для чтения свойство 'name'
+
+        console.log( user.name );
+
+    </script>
+
+</body>
+</html>

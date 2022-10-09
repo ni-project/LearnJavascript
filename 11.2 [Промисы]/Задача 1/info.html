@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        11.2 | Задача 1
+    </title>
+</head>
+<body>
+
+    <script>
+
+        new Promise((resolve, reject) => {
+            setTimeout(() => resolve("value"), 2000);
+        })
+            .finally(() => alert("Промис завершён")) // срабатывает первым
+            .then(result => alert(result)); // <-- .then показывает "value"
+
+        /*======*/
+
+        new Promise((resolve, reject) => {
+            throw new Error("error");
+        })
+            .finally(() => alert("Промис завершён")) // срабатывает первым
+            .catch(err => alert(err));  // <-- .catch показывает ошибку
+
+        /*======*/
+
+        function loadScript(src) {
+            return new Promise(function(resolve, reject) {
+                let script = document.createElement('script');
+                script.src = src;
+
+                script.onload = () => resolve(script);
+                script.onerror = () => reject(new Error(`Ошибка загрузки скрипта ${src}`));
+
+                document.head.append(script);
+            });
+        }
+
+        let promise = loadScript("https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js");
+
+        promise.then(
+            script => alert(`${script.src} загружен!`),
+            error => alert(`Ошибка: ${error.message}`)
+        );
+
+        promise.then(script => alert('Ещё один обработчик...'));
+
+    </script>
+
+</body>
+</html>

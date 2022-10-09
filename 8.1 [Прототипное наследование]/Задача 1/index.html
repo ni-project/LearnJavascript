@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        8.1 | Задача 1
+    </title>
+</head>
+<body>
+
+    <script>
+
+        // В приведённом ниже коде создаются и изменяются два объекта.
+
+        // Какие значения показываются в процессе выполнения кода?
+
+        let animal = {
+            jumps: null
+        };
+        let rabbit = {
+            __proto__: animal,
+            jumps: true
+        };
+
+        alert( rabbit.jumps ); // ? (1) // true
+
+        delete rabbit.jumps;
+
+        alert( rabbit.jumps ); // ? (2) // null
+
+        delete animal.jumps;
+
+        alert( rabbit.jumps ); // ? (3) // undefined
+
+        //-------------------------------------------------------------
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        4.4 | Задача 1
+    </title>
+</head>
+<body>
+
+    <script>
+
+        // Здесь функция makeUser возвращает объект.
+        // Каким будет результат при обращении к свойству объекта ref? Почему?
+
+        function makeUser() {
+            return {
+                name: "Джон",
+                ref: this
+            };
+        }
+
+        let user = makeUser();
+
+        alert( user.ref.name ); // Каким будет результат?
+
+        //----------------------------------------------------------
+
+        // alert покажет Джон
+        // К переменной user приравнивается объект который отдает функция makeUser()
+        // user.ref увидит name в объекте через this
+
+    </script>
+
+</body>
+</html>

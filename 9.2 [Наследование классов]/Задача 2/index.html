@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        9.2 | Задача 2
+    </title>
+</head>
+<body style="font-family: sans-serif;">
+
+<div style="font-size: 28px; font-weight: 700;" id="clock">00:00:00</div>
+
+    <script>
+
+        // У нас есть класс Clock. Сейчас он выводит время каждую секунду
+
+        // Создайте новый класс ExtendedClock, который будет наследоваться от Clock и добавьте параметр precision –
+        // количество миллисекунд между «тиками». Установите значение в 1000 (1 секунда) по умолчанию.
+
+        // Сохраните ваш код в файл extended-clock.js
+        // Не изменяйте класс clock.js. Расширьте его.
+
+        //-------------------------------------------------------------
+
+    </script>
+
+    <script src="clock.js"></script>
+    <script src="extended-clock.js"></script>
+
+    <script>
+
+        let clock = new ExtendedClock({template: 'h:m:s:ms'});
+        clock.start();
+
+    </script>
+
+</body>
+</html>

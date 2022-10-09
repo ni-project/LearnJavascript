@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        4.4 | Задача 2
+    </title>
+</head>
+<body>
+
+    <script>
+
+        // Создайте объект calculator (калькулятор) с тремя методами:
+
+        // read() (читать) запрашивает два значения и сохраняет их как свойства объекта.
+        // sum() (суммировать) возвращает сумму сохранённых значений.
+        // mul() (умножить) перемножает сохранённые значения и возвращает результат.
+        /*let calculator = {
+            // ... ваш код ...
+        };*/
+
+        let calculator = {
+            // ... ваш код ...
+
+            read: function() {
+                let val1 = +prompt('Укажите первое значение:', 0);
+                let val2 = +prompt('Укажите второе значение:', 0);
+
+                this.first = val1;
+                this.second = val2;
+            },
+
+            sum: function () {
+                return this.first + this.second;
+            },
+
+            mul: function () {
+                return this.first * this.second;
+            }
+
+        };
+
+        calculator.read();
+
+        alert( `${calculator.first} + ${calculator.second} = ` + calculator.sum() );
+        alert( `${calculator.first} * ${calculator.second} = ` + calculator.mul() );
+
+    </script>
+
+</body>
+</html>

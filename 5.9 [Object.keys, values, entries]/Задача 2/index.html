@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        5.9 | Задача 2
+    </title>
+</head>
+<body>
+
+    <script>
+
+        // Напишите функцию count(obj), которая возвращает количество свойств объекта:
+
+        let user = {
+            name: 'John',
+            age: 30
+        };
+
+        alert( count(user) ); // 2
+
+        // Постарайтесь сделать код как можно короче.
+        // P.S. Игнорируйте символьные свойства, подсчитывайте только «обычные».
+
+        //---------------------------------------------------------------------------
+
+        function count(obj) {
+            let count = 0;
+
+            for (let value of Object.keys(obj)) {
+                ++count;
+            }
+
+            return count;
+        }
+
+    </script>
+
+</body>
+</html>

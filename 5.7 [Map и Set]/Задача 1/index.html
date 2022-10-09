@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        5.7 | Задача 1
+    </title>
+</head>
+<body>
+
+    <script>
+
+        // Допустим, у нас есть массив arr.
+
+        // Создайте функцию unique(arr), которая вернёт массив уникальных, не повторяющихся значений массива arr.
+
+        // Например:
+
+        let values = ["Hare", "Krishna", "Hare", "Krishna",
+            "Krishna", "Krishna", "Hare", "Hare", ":-O"
+        ];
+
+        alert( unique(values) ); // Hare,Krishna,:-O
+
+        // P.S. Здесь мы используем строки, но значения могут быть любого типа.
+
+        // P.P.S. Используйте Set для хранения уникальных значений.
+
+        //---------------------------------------------------------------------------
+
+        function unique(arr) {
+            let array = new Set(arr);
+            let result = [];
+
+            for (let value of array) {
+                result.push(value);
+            }
+
+            return result;
+        }
+
+    </script>
+
+</body>
+</html>

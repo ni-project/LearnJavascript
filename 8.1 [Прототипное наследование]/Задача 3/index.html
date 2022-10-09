@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        8.1 | Задача 3
+    </title>
+</head>
+<body>
+
+    <script>
+
+        // Куда будет произведена запись?
+
+        // Объект rabbit наследует от объекта animal.
+
+        // Какой объект получит свойство full при вызове rabbit.eat(): animal или rabbit?
+
+        let animal = {
+            eat() {
+                this.full = true;
+            }
+        };
+
+        let rabbit = {
+            __proto__: animal
+        };
+
+        rabbit.eat();
+
+        console.log( animal );
+        console.log( rabbit );
+
+        //-------------------------------------------------------------
+
+        // Запись full = true будет записана в rabbit
+
+    </script>
+
+</body>
+</html>

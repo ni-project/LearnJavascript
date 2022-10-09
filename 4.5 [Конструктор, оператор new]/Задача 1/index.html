@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        4.5 | Задача 1
+    </title>
+</head>
+<body>
+
+    <script>
+
+        // Возможно ли создать функции A и B, чтобы new A() == new B()?
+
+        /*function A() { ... }
+        function B() { ... }
+
+        let a = new A;
+        let b = new B;
+
+        alert( a == b ); // true*/
+
+        // Если да – приведите пример вашего кода.
+
+        //----------------------------------------------------------
+
+        // Это разные фукции и НЕ будут равны
+
+        // Решено не верно, не доконца понял поставленный вопрос ...
+
+        function A(name) {
+            this.name = name;
+        }
+        function B(name) {
+            this.name = name;
+        }
+
+        let a = new A('1');
+        let b = new B('1');
+
+        alert( a == b ); // false // Так и думал что будет false!
+
+        console.log( a.name );
+        console.log( b.name );
+
+    </script>
+
+</body>
+</html>

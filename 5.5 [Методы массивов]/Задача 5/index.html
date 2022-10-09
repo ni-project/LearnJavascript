@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        5.5 | Задача 5
+    </title>
+</head>
+<body>
+
+    <script>
+
+        // У нас есть массив строк arr. Нужно получить отсортированную копию, но оставить arr неизменённым.
+
+        // Создайте функцию copySorted(arr), которая будет возвращать такую копию.
+
+        // let arr = ["HTML", "JavaScript", "CSS"];
+        // let sorted = copySorted(arr);
+        // alert( sorted ); // CSS, HTML, JavaScript
+        // alert( arr ); // HTML, JavaScript, CSS (без изменений)
+
+        //---------------------------------------------------------------------------
+
+        let arr = ["HTML", "JavaScript", "CSS"];
+        let sorted = copySorted(arr);
+        alert( sorted ); // CSS, HTML, JavaScript
+        alert( arr ); // HTML, JavaScript, CSS (без изменений)
+
+        function copySorted(arr) {
+            let array = arr.slice(0, arr.length).sort();
+            return array;
+        }
+
+    </script>
+
+</body>
+</html>

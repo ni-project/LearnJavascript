@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        11.2 | Задача 1
+    </title>
+</head>
+<body>
+
+    <script>
+
+        // Что выведет код ниже?
+
+        let promise = new Promise(function(resolve, reject) {
+            resolve(1);
+
+            setTimeout(() => resolve(2), 1000);
+        });
+
+        promise.then(alert);
+
+        //---------------------------------------------------------------------------
+
+        // Выведет 1
+
+    </script>
+
+</body>
+</html>

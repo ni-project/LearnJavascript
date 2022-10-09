@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        6.8 | Задача 1
+    </title>
+</head>
+<body style="font-family: sans-serif;">
+
+    <div style="font-size: 24px;">setTimeout:</div>
+    <div style="font-size: 28px; font-weight: 700;" id="timer-setTimeout">
+        0
+    </div>
+
+    <div style="font-size: 24px; margin-top: 32px;">setInterval:</div>
+    <div style="font-size: 28px; font-weight: 700;" id="timer-setInterval">
+        0
+    </div>
+
+    <script>
+
+        // Напишите функцию printNumbers(from, to), которая выводит число каждую секунду, начиная от from и заканчивая to.
+
+        // Сделайте два варианта решения.
+
+        // Используя рекурсивный setTimeout.
+        // Используя setInterval.
+
+        //-----------------------------------------------------------------------
+
+        // Используя рекурсивный setTimeout:
+        function printNumbers(from, to) {
+            let timer = document.getElementById('timer-setTimeout');
+            let value = from;
+
+            setTimeout(function run() {
+                timer.innerText = value;
+
+                if ( value <= to - 1 ) {
+                    value++;
+                    setTimeout(run, 1000);
+                } else {
+                    timer.innerText = value + ' Stop SetTimeout!';
+                    clearInterval(run);
+                }
+            }, 1000);
+        }
+
+        printNumbers(10, 15);
+
+        // Используя setInterval:
+        function printNumbers2(from, to) {
+            let timer = document.getElementById('timer-setInterval');
+            let value = from;
+
+            let timerId = setInterval(function() {
+                timer.innerText = value;
+
+                if ( value <= to - 1 ) {
+                    value++;
+                } else {
+                    timer.innerText = value + ' Stop SetInterval!';
+                    clearInterval(timerId);
+                }
+            }, 1000);
+        }
+
+        printNumbers2(10, 15);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        5.12 | Задача 1
+    </title>
+</head>
+<body>
+
+    <script>
+
+        // JavaScript предоставляет методы:
+
+        // JSON.stringify для преобразования объектов в JSON.
+        // JSON.parse для преобразования JSON обратно в объект.
+
+        //-----------------------------------------------------------------------
+
+        // Преобразуйте user в JSON, затем прочитайте этот JSON в другую переменную.
+
+        let user = {
+            name: "Василий Иванович",
+            age: 35
+        };
+
+        //-----------------------------------------------------------------------
+
+        let userJson = JSON.stringify(user);
+
+        let userObj = JSON.parse(userJson);
+
+        console.log( userJson );
+        console.log( userObj );
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        9.1 | Задача 1
+    </title>
+</head>
+<body style="font-family: sans-serif;">
+
+<div style="font-size: 28px; font-weight: 700;" id="clock">00:00:00</div>
+
+    <script>
+
+        // Класс Clock написан в функциональном стиле. Перепишите его, используя современный синтаксис классов.
+
+        /*function Clock({ template }) {
+
+            let timer;
+
+            function render() {
+              let date = new Date();
+
+              let hours = date.getHours();
+              if (hours < 10) hours = '0' + hours;
+
+              let mins = date.getMinutes();
+              if (mins < 10) mins = '0' + mins;
+
+              let secs = date.getSeconds();
+              if (secs < 10) secs = '0' + secs;
+
+              let output = template
+                .replace('h', hours)
+                .replace('m', mins)
+                .replace('s', secs);
+
+              console.log(output);
+            }
+
+            this.stop = function() {
+              clearInterval(timer);
+            };
+
+            this.start = function() {
+              render();
+              timer = setInterval(render, 1000);
+            };
+
+        }
+
+        let clock = new Clock({template: 'h:m:s'});
+        clock.start();*/
+
+        //-------------------------------------------------------------
+
+        class Clock {
+            constructor({template}) {
+                this.template = template;
+            }
+
+            start() {
+                this.render();
+                this.timer = setInterval(() => this.render(), 1000);
+            }
+
+            stop() {
+                clearInterval(this.timer);
+            }
+
+            render() {
+                let date = new Date();
+
+                let hours = date.getHours();
+                if (hours < 10) hours = '0' + hours;
+
+                let mins = date.getMinutes();
+                if (mins < 10) mins = '0' + mins;
+
+                let secs = date.getSeconds();
+                if (secs < 10) secs = '0' + secs;
+
+                let output = this.template
+                    .replace('h', hours)
+                    .replace('m', mins)
+                    .replace('s', secs);
+
+                document.getElementById('clock').innerText = output;
+            }
+        }
+
+        let clock = new Clock({template: 'h:m:s'});
+        clock.start(); // Пуск
+
+        setTimeout(function() {
+            clock.stop(); // Остановить через 10 секунд
+        }, 10000);
+
+    </script>
+
+</body>
+</html>

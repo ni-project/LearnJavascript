@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>
+        10.1 | Задача 1
+    </title>
+</head>
+<body>
+
+    <script>
+
+        try {
+            lalala; // ошибка, переменная не определена!
+        } catch(err) {
+            alert(err.name); // ReferenceError
+            alert(err.message); // lalala is not defined
+            alert(err.stack); // ReferenceError: lalala is not defined at (...стек вызовов)
+
+            // Можем также просто вывести ошибку целиком
+            // Ошибка приводится к строке вида "name: message"
+            alert(err); // ReferenceError: lalala is not defined
+        } finally {
+            alert('Блок finally - очистить рабочее пространство');
+        }
+
+    </script>
+
+</body>
+</html>
